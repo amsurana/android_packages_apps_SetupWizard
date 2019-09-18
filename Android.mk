@@ -24,7 +24,7 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
     libphonenumber 
-#    org.lineageos.platform.internal
+#    org.androidos.platform.internal
 
 LOCAL_JAVA_LIBRARIES := \
     telephony-common
