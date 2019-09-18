@@ -219,7 +219,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".LineageSettingsActivity"
+        <!-- <activity android:name=".LineageSettingsActivity"
                   android:label="@string/activity_label_empty"
                   android:excludeFromRecents="true"
                   android:configChanges="mcc|mnc"
@@ -229,7 +229,7 @@
                 <action android:name="org.lineageos.setupwizard.LINEAGE_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
+        </activity> -->
 
         <activity android:name=".FingerprintActivity"
                   android:label="@string/activity_label_empty"

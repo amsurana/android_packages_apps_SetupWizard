@@ -62,7 +62,7 @@ import org.lineageos.setupwizard.SimMissingActivity;
 import org.lineageos.setupwizard.WifiSetupActivity;
 import org.lineageos.setupwizard.wizardmanager.WizardManager;
 
-import org.lineageos.internal.util.PackageManagerUtils;
+//import org.lineageos.internal.util.PackageManagerUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -169,16 +169,16 @@ public class SetupWizardUtils {
     }
 
     public static boolean hasGMS(Context context) {
-        if (PackageManagerUtils.isAppInstalled(context, GMS_PACKAGE) &&
-                PackageManagerUtils.isAppInstalled(context, GMS_SUW_PACKAGE)) {
-            PackageManager packageManager = context.getPackageManager();
-            if (LOGV) {
-                Log.v(TAG, GMS_SUW_PACKAGE + " state = " +
-                        packageManager.getApplicationEnabledSetting(GMS_SUW_PACKAGE));
-            }
-            return packageManager.getApplicationEnabledSetting(GMS_SUW_PACKAGE) !=
-                    COMPONENT_ENABLED_STATE_DISABLED;
-        }
+//        if (PackageManagerUtils.isAppInstalled(context, GMS_PACKAGE) &&
+//                PackageManagerUtils.isAppInstalled(context, GMS_SUW_PACKAGE)) {
+//            PackageManager packageManager = context.getPackageManager();
+//            if (LOGV) {
+//                Log.v(TAG, GMS_SUW_PACKAGE + " state = " +
+//                        packageManager.getApplicationEnabledSetting(GMS_SUW_PACKAGE));
+//            }
+//            return packageManager.getApplicationEnabledSetting(GMS_SUW_PACKAGE) !=
+//                    COMPONENT_ENABLED_STATE_DISABLED;
+//        }
         return false;
     }
 
