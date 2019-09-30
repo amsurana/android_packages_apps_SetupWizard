@@ -181,24 +181,6 @@ public class FinishActivity extends BaseSetupWizardActivity {
         startActivityForResult(intent, NEXT_REQUEST);
     }
 
-//    private static void handleEnableMetrics(SetupWizardApp setupWizardApp) {
-//        Bundle privacyData = setupWizardApp.getSettingsBundle();
-//        if (privacyData != null
-//                && privacyData.containsKey(KEY_SEND_METRICS)) {
-//            LineageSettings.Secure.putInt(setupWizardApp.getContentResolver(),
-//                    LineageSettings.Secure.STATS_COLLECTION, privacyData.getBoolean(KEY_SEND_METRICS)
-//                            ? 1 : 0);
-//        }
-//    }
-
-//    private static void handlePrivacyGuard(SetupWizardApp setupWizardApp) {
-//        Bundle mPrivacyData = setupWizardApp.getSettingsBundle();
-//        if (mPrivacyData != null && mPrivacyData.containsKey(KEY_PRIVACY_GUARD)) {
-//            LineageSettings.Secure.putInt(setupWizardApp.getContentResolver(),
-//                    LineageSettings.Secure.PRIVACY_GUARD_DEFAULT,
-//                    mPrivacyData.getBoolean(KEY_PRIVACY_GUARD) ? 1 : 0);
-//        }
-//    }
 
     private static void handleNavKeys(SetupWizardApp setupWizardApp) {
 //        if (setupWizardApp.getSettingsBundle().containsKey(DISABLE_NAV_KEYS)) {

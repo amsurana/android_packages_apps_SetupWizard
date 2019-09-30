@@ -18,11 +18,11 @@
 -->
 
 <WizardScript xmlns:wizard="http://schemas.android.com/apk/res/com.google.android.setupwizard"
-    wizard:firstAction="bluetooth_setup">
+    wizard:firstAction="welcome">
 
-    <WizardAction wizard:uri="intent:#Intent;action=com.android.initwizard.WIZARD_BLUETOOTH_SETUP;end" id="bluetooth_setup">
+    <!-- <WizardAction wizard:uri="intent:#Intent;action=com.android.initwizard.WIZARD_BLUETOOTH_SETUP;end" id="bluetooth_setup">
         <result wizard:action="welcome" />
-    </WizardAction>
+    </WizardAction> -->
 
     <WizardAction wizard:uri="intent:#Intent;action=com.android.initwizard.WIZARD_WELCOME;end" id="welcome">
         <result wizard:action="locale" />

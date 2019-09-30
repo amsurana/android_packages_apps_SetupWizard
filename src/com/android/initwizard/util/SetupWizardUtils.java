@@ -196,11 +196,7 @@ public class SetupWizardUtils {
                 Settings.Global.DEVICE_PROVISIONED, 1);
         Settings.Secure.putInt(contentResolver,
                 Settings.Secure.USER_SETUP_COMPLETE, 1);
-        if (hasLeanback(context)) {
-            Settings.Secure.putInt(contentResolver,
-                    Settings.Secure.TV_USER_SETUP_COMPLETE, 1);
-        }
-
+    
         disableComponent(context, WizardManager.class);
         disableHome(context);
         context.sendStickyBroadcastAsUser(
@@ -215,11 +211,6 @@ public class SetupWizardUtils {
 
         return (cm.getActiveNetworkInfo() != null &&
                 cm.getActiveNetworkInfo().getType() == ConnectivityManager.TYPE_ETHERNET);
-    }
-
-    public static boolean hasLeanback(Context context) {
-        PackageManager packageManager = context.getPackageManager();
-        return packageManager.hasSystemFeature(PackageManager.FEATURE_LEANBACK);
     }
 
     public static boolean hasFingerprint(Context context) {
@@ -238,9 +229,6 @@ public class SetupWizardUtils {
     }
 
     public static void disableComponentsForMissingFeatures(Context context) {
-        if (!hasLeanback(context)) {
-            disableComponent(context, BluetoothSetupActivity.class);
-        }
         if (!hasFingerprint(context)) {
             disableComponent(context, FingerprintActivity.class);
         }

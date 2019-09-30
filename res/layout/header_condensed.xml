@@ -38,7 +38,7 @@
         android:layout_height="64dp"
         android:layout_toEndOf="@id/header_icon"
         android:paddingEnd="8dp"
-        android:typeface="monospace"
+		android:textStyle="bold"
         android:gravity="center_vertical"
         android:maxLines="1"
         android:ellipsize="end"

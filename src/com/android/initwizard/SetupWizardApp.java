@@ -31,7 +31,7 @@ public class SetupWizardApp extends Application {
 
     public static final String TAG = SetupWizardApp.class.getSimpleName();
     // Leave this off for release
-    public static final boolean DEBUG = false;
+    public static final boolean DEBUG = true;
     /* Verbose Logging */
     public static final boolean LOGV = Log.isLoggable(TAG, Log.VERBOSE);
 

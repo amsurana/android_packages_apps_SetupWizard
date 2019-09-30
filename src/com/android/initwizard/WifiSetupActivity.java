@@ -33,9 +33,6 @@ public class WifiSetupActivity extends SubBaseActivity {
     protected void onStartSubactivity() {
         tryEnablingWifi();
         Intent intent = new Intent(ACTION_SETUP_WIFI);
-        if (SetupWizardUtils.hasLeanback(this)) {
-            intent.setComponent(SetupWizardUtils.mTvwifisettingsActivity);
-        }
         intent.putExtra(SetupWizardApp.EXTRA_PREFS_SHOW_BUTTON_BAR, true);
         intent.putExtra(SetupWizardApp.EXTRA_PREFS_SET_BACK_TEXT, (String) null);
         startSubactivity(intent, REQUEST_CODE_SETUP_WIFI);

@@ -27,6 +27,8 @@ import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.PowerManager;
+
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
@@ -36,7 +38,6 @@ import android.widget.Toast;
 
 import com.android.internal.telephony.MccTable;
 import com.android.internal.telephony.TelephonyIntents;
-
 import com.android.initwizard.R;
 import com.android.initwizard.widget.LocalePicker;
 
@@ -124,6 +125,15 @@ public class LocaleActivity extends BaseSetupWizardActivity {
     protected int getIconResId() {
         return R.drawable.ic_locale;
     }
+    
+    public void onNavigateNext() {
+    	//setLocaleFromPicker();
+    	
+//    	PowerManager powerManager =
+//                (PowerManager)getSystemService(Context.POWER_SERVICE);
+//        powerManager.reboot(null);
+    	super.onNavigateNext();
+    }
 
     private void loadLanguages() {
         mLocaleAdapter = com.android.internal.app.LocalePicker.constructAdapter(this,
@@ -147,7 +157,7 @@ public class LocaleActivity extends BaseSetupWizardActivity {
         mLanguagePicker.setMaxValue(labels.length - 1);
         mLanguagePicker.setValue(currentLocaleIndex);
         mLanguagePicker.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
-        mLanguagePicker.setOnValueChangedListener((pkr, oldVal, newVal) -> setLocaleFromPicker());
+        //mLanguagePicker.setOnValueChangedListener((pkr, oldVal, newVal) -> setLocaleFromPicker());
 
         mLanguagePicker.setOnScrollListener((view, scrollState) -> {
             if (scrollState == NumberPicker.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL) {
