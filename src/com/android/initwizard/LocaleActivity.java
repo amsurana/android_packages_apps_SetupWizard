@@ -35,6 +35,7 @@ import android.telephony.TelephonyManager;
 import android.widget.ArrayAdapter;
 import android.widget.NumberPicker;
 import android.widget.Toast;
+import android.view.View;
 
 import com.android.internal.telephony.MccTable;
 import com.android.internal.telephony.TelephonyIntents;
@@ -62,6 +63,9 @@ public class LocaleActivity extends BaseSetupWizardActivity {
             if (mCurrentLocale != null) {
                 mLanguagePicker.setEnabled(false);
                 com.android.internal.app.LocalePicker.updateLocale(mCurrentLocale);
+                PowerManager powerManager =
+                        (PowerManager)getSystemService(Context.POWER_SERVICE);
+                powerManager.reboot(null);
             }
         }
     };
@@ -81,6 +85,13 @@ public class LocaleActivity extends BaseSetupWizardActivity {
         super.onCreate(savedInstanceState);
         setNextText(R.string.next);
         mLanguagePicker = (LocalePicker) findViewById(R.id.locale_list);
+        
+        findViewById(R.id.update_locale).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            	setLocaleFromPicker();
+            }
+        });
         loadLanguages();
     }
 
@@ -126,15 +137,6 @@ public class LocaleActivity extends BaseSetupWizardActivity {
         return R.drawable.ic_locale;
     }
     
-    public void onNavigateNext() {
-    	//setLocaleFromPicker();
-    	
-//    	PowerManager powerManager =
-//                (PowerManager)getSystemService(Context.POWER_SERVICE);
-//        powerManager.reboot(null);
-    	super.onNavigateNext();
-    }
-
     private void loadLanguages() {
         mLocaleAdapter = com.android.internal.app.LocalePicker.constructAdapter(this,
                 R.layout.locale_picker_item, R.id.locale);

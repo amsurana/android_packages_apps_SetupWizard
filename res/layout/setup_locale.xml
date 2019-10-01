@@ -31,15 +31,29 @@
                     android:paddingLeft="@dimen/content_margin_left"
                     android:paddingRight="@dimen/content_margin_left">
 
+		
         <com.android.initwizard.widget.LocalePicker
             android:id="@+id/locale_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:layout_alignParentBottom="true"
+            android:padding="10dp"
+            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"/>
 
+ 			<TextView
+                    android:id="@+id/update_locale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/content_margin_left"
+                    android:paddingRight="@dimen/location_text_margin_right"
+                    android:gravity="center_vertical"
+                    android:textSize="20sp"
+                    android:textAllCaps="true"
+                    android:layout_below="@+id/locale_list"
+                    android:textColor="@color/fingerprint_setup_text_color"
+                    android:text="@string/ok"/>
     </RelativeLayout>
 
 
